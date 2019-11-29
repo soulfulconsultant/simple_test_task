@@ -2,7 +2,7 @@
 Implementation of simple products API
 ## Issue description
 Implement simple Product API based on Express framework:
-  1.	Implement all CRUD operations, plus add possibility to get ALL products from the storage  and ALL reviews for a single product. 
+  1.	Implement all CRUD operations, plus add possibility to get ALL products from the storage  **and ALL reviews for a single product**. 
   For simplicity you can use local json file as storage (product example is the following -
   { id:  1, name:  'T-Shirt', price:  99.99, options: [{ color:  'blue' }, { size:  'XL' } ] } . 
   2.	Add authentication to the service:
@@ -14,6 +14,43 @@ Implement simple Product API based on Express framework:
     e.	Develop JWT token verification for all Products endpoints/routes.
   3.	Cover you code by tests.
   4.	Create Swagger to describe your API.
+## Description of implementation
+ The problem statement was completely clear to me, with the exception of the **and ALL reviews for a single product** part.
+ The problem statement was completely clear to me, with the exception of the test part.
+ 
+ My understanding of this part of the task is as follows, when an authorized user requests a certain product(*GET /product/:id*), it  means that he "views it", respectively, in the "table" reviews (reviews.json file) we add a record: `
+ {
+ "productId": "some_product_id",
+ "user": "some_user_login",
+ "date": "date of reviewing"
+ }
+ `
+ When a product is deleted, all relevant reviews are deleted.
+ 
+ In accordance with the task created endpoints
+- *POST /auth* - authorization endpoint
+- *GET /products* - get list of product objects
+- *GET /products/:id* - get product object
+- *GET /products/:id/reviews* - get reviews for a single project
+- *POST /products* - create product object
+- *PUT /products/:id* - update product object
+- *DELETE /product/:id* - delete product object
 
-  ## Installing and running
-  Use `npm install` command to install required packages and `npm start` to run server
+All this endpoints awaliable in Swagger at */api-docs* route.
+
+## Available Scripts
+In the project directory, you can run:
+
+### `npm install`
+
+Install required packages
+
+### `npm start`
+
+Runs the app in the development mode.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](#running-tests) for more information.
+ 
