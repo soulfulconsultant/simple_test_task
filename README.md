@@ -16,9 +16,10 @@ Implement simple Product API based on Express framework:
   4.	Create Swagger to describe your API.
 ## Description of implementation
  The problem statement was completely clear to me, with the exception of the **and ALL reviews for a single product** part.
- The problem statement was completely clear to me, with the exception of the test part.
  
- My understanding of this part of the task is as follows, when an authorized user requests a certain product(*GET /product/:id*), it  means that he "views it", respectively, in the "table" reviews (reviews.json file) we add a record: `
+ My understanding of this part of the task is as follows, when an authorized user requests a certain product(*GET /product/:id*), it  means that he "views it", respectively, in the "table" reviews (reviews.json file) we add a record: 
+ 
+ `
  {
  "productId": "some_product_id",
  "user": "some_user_login",
