@@ -25,7 +25,8 @@ Implement simple Product API based on Express framework:
  "user": "some_user_login",
  "date": "date of reviewing"
  }
- `
+ `.
+ 
  When a product is deleted, all relevant reviews are deleted.
  
  In accordance with the task created endpoints
