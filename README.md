@@ -23,7 +23,7 @@ Implement simple Product API based on Express framework:
  {
  "productId": "some_product_id",
  "user": "some_user_login",
- "date": "date of reviewing"
+ "date": "date_of_reviewing"
  }
  `.
  
