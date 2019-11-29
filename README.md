@@ -40,6 +40,12 @@ Implement simple Product API based on Express framework:
 
 All this endpoints awaliable in Swagger at */api-docs* route.
 
+Possible improvements:
+- export configuration(port number, swagger route, etc.) to a separate file;
+- and the rest depending on your imagination :)
+
+Note: default user login is **test** password **12345**
+
 ## Available Scripts
 In the project directory, you can run:
 
