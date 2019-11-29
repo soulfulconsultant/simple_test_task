@@ -30,13 +30,13 @@ Implement simple Product API based on Express framework:
  When a product is deleted, all relevant reviews are deleted.
  
  In accordance with the task created endpoints
-- *POST /auth* - authorization endpoint
-- *GET /products* - get list of product objects
-- *GET /products/:id* - get product object
-- *GET /products/:id/reviews* - get reviews for a single project
-- *POST /products* - create product object
-- *PUT /products/:id* - update product object
-- *DELETE /product/:id* - delete product object
+- *POST /auth* - authorization endpoint;
+- *GET /products* - get list of product objects;
+- *GET /products/:id* - get product object;
+- *GET /products/:id/reviews* - get reviews for a product;
+- *POST /products* - create product object;
+- *PUT /products/:id* - update product object;
+- *DELETE /product/:id* - delete product object.
 
 All this endpoints awaliable in Swagger at */api-docs* route.
 
@@ -53,6 +53,5 @@ Runs the app in the development mode.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](#running-tests) for more information.
- 
+Runs the tests
+
