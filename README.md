@@ -39,7 +39,8 @@ Implement simple Product API based on Express framework:
 - *DELETE /product/:id* - delete product object.
 
 All this endpoints awaliable in Swagger at */api-docs* route.
-Node default user login is **test** password **12345**
+
+Note: default user login is **test** password **12345**
 
 ## Available Scripts
 In the project directory, you can run:
