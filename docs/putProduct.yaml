@@ -1,0 +1,44 @@
+'/products/{id}':
+  put:
+    tags:
+      - Products
+    name: 'Update product'
+    summary: 'Update product'
+    parameters:
+      -
+        name: Authorization
+        in: header
+        required: true
+      -
+        name: id
+        in: path
+        required: true
+      -
+        name: body
+        in: body
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            price:
+              type: number
+            options:
+              type: array
+              items:
+                type: object
+        required:
+          - id
+          - name
+          - price
+    responses:
+      '200':
+        description: 'An object with updated product'
+      '400':
+        description: 'Bad request'
+      '401':
+        description: 'Authorization error'
+      '500':
+        description: 'Internal server error'

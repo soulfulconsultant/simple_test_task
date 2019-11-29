@@ -1,0 +1,25 @@
+'/products/{id}':
+  delete:
+    tags:
+      - Products
+    name: 'Delete product'
+    summary: 'Delete product'
+    parameters:
+      -
+        name: Authorization
+        in: header
+        required: true
+      -
+        name: id
+        in: path
+        required: true
+    responses:
+      '200':
+        description: 'Product deleted'
+      '401':
+        description: 'Authorization error'
+      '404':
+        description: 'Product not found'
+      '500':
+        description: 'Internal server error'
+        

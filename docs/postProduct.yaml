@@ -1,0 +1,38 @@
+/products:
+  post:
+    tags:
+      - Products
+    name: 'Create product'
+    summary: 'Create product'
+    parameters:
+      -
+        name: Authorization
+        in: header
+        required:
+          - Authorization
+      -
+        name: body
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            price:
+              type: number
+            options:
+              type: array
+              items:
+                type: object
+        required:
+          - name
+          - price
+    responses:
+      '200':
+        description: 'Product created'
+      '400':
+        description: 'Bad request'
+      '401':
+        description: 'Authorization error'
+      '500':
+        description: 'Internal server error'

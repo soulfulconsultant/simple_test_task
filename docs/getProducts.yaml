@@ -1,0 +1,22 @@
+paths:
+  '/products':
+    get:
+      tags:
+        - Products
+      name: 'Get products list'
+      summary: 'Get products list'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          schema:
+            type: string
+          required:
+            - Authorization
+      responses:
+        '200':
+          description: 'A list of product objects'
+        '401':
+          description: 'Authorization error'
+        '500':
+          description: 'Internal server error'

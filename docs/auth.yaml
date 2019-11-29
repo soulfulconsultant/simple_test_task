@@ -1,0 +1,27 @@
+/auth:
+  post:
+    tags:
+      - Auth
+    name: 'Auth user'
+    summary: 'Auth user'
+    parameters:
+      -
+        name: body
+        in: body
+        schema:
+          type: object
+          properties:
+            login:
+              type: string
+            password:
+              type: string
+        required:
+          - login
+          - password
+    responses:
+      '200':
+        description: 'Successfully retrieve the token'
+      '400':
+        description: 'Bad request'
+      '500':
+        description: 'Internal server error'

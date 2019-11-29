@@ -1,0 +1,24 @@
+'/products/{id}':
+  get:
+    tags:
+      - Products
+    name: 'Get product by id'
+    summary: 'Get product by id'
+    parameters:
+      -
+        name: Authorization
+        in: header
+        required: true
+      -
+        name: id
+        in: path
+        required: true
+    responses:
+      '200':
+        description: 'An object with product details'
+      '401':
+        description: 'Authorization error'
+      '404':
+        description: 'Product not found'
+      '500':
+          description: 'Internal server error'
