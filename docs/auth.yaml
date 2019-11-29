@@ -3,7 +3,7 @@
     tags:
       - Auth
     name: 'Auth user'
-    summary: 'Auth user'
+    summary: 'Auth user (Default user login - "test"; default password - "12345")'
     parameters:
       -
         name: body

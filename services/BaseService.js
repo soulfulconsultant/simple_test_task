@@ -5,56 +5,56 @@ const StorageAdapter = require('../lib/storageAdapter');
 const { ValidationError } = require('../lib/errors');
 
 class BaseService {
-  constructor(params) {
-    this.user = params.user;
-    this.storageAdapter = new StorageAdapter({
-      storagePath: params.storagePath,
-      tableName: this.tableName
-    });
-  }
+	constructor(params) {
+		this.user = params.user;
+		this.storageAdapter = new StorageAdapter({
+			storagePath: params.storagePath,
+			tableName: this.tableName
+		});
+	}
 
-  get(id) {
-    return this.storageAdapter.get(id);
-  }
+	get(id) {
+		return this.storageAdapter.get(id);
+	}
 
-  list(params) {
-    return this.storageAdapter.list(params);
-  }
+	list(params) {
+		return this.storageAdapter.list(params);
+	}
 
-  create(payload) {
-    return this.storageAdapter.create(
-      this._validateSchema({
-        ...payload,
-        id: this._getId()
-      })
-    );
-  }
+	create(payload) {
+		return this.storageAdapter.create(
+			this._validateSchema({
+				...payload,
+				id: this._getId()
+			})
+		);
+	}
 
-  update(payload) {
-    return this.storageAdapter.update(this._validateSchema(payload));
-  }
+	update(payload) {
+		return this.storageAdapter.update(this._validateSchema(payload));
+	}
 
-  delete(id) {
-    return this.storageAdapter.delete(id);
-  }
+	delete(id) {
+		return this.storageAdapter.delete(id);
+	}
 
-  batchDelete(query) {
-    return this.storageAdapter.batchDelete(query);
-  }
+	batchDelete(query) {
+		return this.storageAdapter.batchDelete(query);
+	}
 
-  _validateSchema(payload) {
-    const res = joi.validate(payload, this.schema);
+	_validateSchema(payload) {
+		const res = joi.validate(payload, this.schema);
 
-    if (res.error) {
-      throw new ValidationError(res.error, this.tableName);
-    }
+		if (res.error) {
+			throw new ValidationError(res.error, this.tableName);
+		}
 
-    return res.value;
-  }
+		return res.value;
+	}
 
-  _getId() {
-    return uuid.v4();
-  }
+	_getId() {
+		return uuid.v4();
+	}
 }
 
 module.exports = BaseService;
