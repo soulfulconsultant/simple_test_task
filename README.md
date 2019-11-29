@@ -29,7 +29,7 @@ Implement simple Product API based on Express framework:
  
  When a product is deleted, all relevant reviews are deleted.
  
- In accordance with the task created endpoints
+ In accordance with the task implemented Products API based on Express framework with such endpoints:
 - *POST /auth* - authorization endpoint;
 - *GET /products* - get list of product objects;
 - *GET /products/:id* - get product object;
